@@ -2,6 +2,8 @@
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
 
+#define _USE_MATH_DEFINES
+
 class KalmanFilter {
 public:
 
@@ -63,6 +65,15 @@ public:
    * @param z The measurement at k+1
    */
   void UpdateEKF(const Eigen::VectorXd &z);
+
+// <DPR>
+private:
+  /**
+   * This function takes an angle in the range [-3*pi, 3*pi] and
+   * wraps it to the range [-pi, pi].
+   */
+  const float rewrapAngleRestricted(const float angle);
+//</DPR>
 
 };
 

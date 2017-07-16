@@ -44,6 +44,10 @@ private:
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+  
+  // <DPR> I add these variables used for the Q matrix
+  float noise_ax;
+  float noise_ay;
 };
 
 #endif /* FusionEKF_H_ */
